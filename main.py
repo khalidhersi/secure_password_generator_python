@@ -17,16 +17,20 @@ random_lowercase_letter = lowercase_letters[random.randint(0, 25)]
 random_number = random.randint(0, 9)
 random_punctuation = string.punctuation[random.randint(0, len(string.punctuation) - 1)]
 
-# All random characters are concatenated
-concatenated_characters = random_punctuation + random_punctuation + random_uppercase_letter + random_uppercase_letter + random_lowercase_letter + random_lowercase_letter + str(random_number) + str(random_number)
 
-# Characters are converted into an array
-list_of_characters = list(concatenated_characters)
-# Array is randomly shuffled
-random.shuffle(list_of_characters)
-# Array is joined together to make new password
-final_password = ''.join(list_of_characters)
+def password_generator():
+    # All random characters are concatenated
+    concatenated_characters = random_uppercase_letter + random_uppercase_letter + random_lowercase_letter + random_lowercase_letter + str(
+        random_number) + str(random_number) + random_punctuation + random_punctuation
+    # Characters are converted into an array
+    list_of_characters = list(concatenated_characters)
+    # Array is randomly shuffled
+    random.shuffle(list_of_characters)
+    # Array is joined together to make new password
+    final_password = ''.join(list_of_characters)
+    # Print out New Secure Password
+    print("Your New Secure Password is: " + final_password)
 
-# Print out New Secure Password
-print(final_password)
 
+# Calling password_generator will print new secure password
+password_generator()
