@@ -20,8 +20,10 @@ random_punctuation = string.punctuation[random.randint(0, len(string.punctuation
 
 def password_generator():
     # All random characters are concatenated
-    concatenated_characters = random_uppercase_letter + random_uppercase_letter + random_lowercase_letter + random_lowercase_letter + str(
-        random_number) + str(random_number) + random_punctuation + random_punctuation
+    concatenated_characters = random_uppercase_letter + random_uppercase_letter + \
+                              random_lowercase_letter + random_lowercase_letter + \
+                              str(random_number) + str(random_number) + \
+                              random_punctuation + random_punctuation
     # Characters are converted into an array
     list_of_characters = list(concatenated_characters)
     # Array is randomly shuffled
